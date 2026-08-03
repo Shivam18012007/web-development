@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>Simple Login Page</title>
+    <script>
+        function validateform(){
+            let username = document.forms["loginForm"]["username"].value;
+            let password = document.forms["loginForm"]["password"].value;
+            
+            if(username == "" || password  == ""){
+                alert("both field must be filled!");
+                return false;
+            }
+            if(password.length<6){
+                alert("password must be at least 6 characters long!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+    </head>
+    <body>
+        <h2>Login page</h2>
+        <form name="loginForm" onsubmit="return validateform()">
+            <label>username:</label><br>
+            <input type="text" name="username"><br><br>
+
+            <label>password:</label><br>
+            <input type="password" name="password"><br><br>
+
+            <input type="submit" value="Login">
+        </form>
+    </body>
+</html>
